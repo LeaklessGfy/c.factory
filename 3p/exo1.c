@@ -18,14 +18,10 @@ int puissance(int a, int n)
 int puissance_recursive(int a, int n)
 {
 	if (n < 1)
-	{
 		return 1;
-	}
 
 	if (n == 1)
-	{
 		return a;
-	}
 
 	n--;
 
