@@ -25,13 +25,14 @@ int base26_to_int(char *str)
 
 	result = 0;
 	current = 1;
-	len = strlen(str) - 1;
+	len = strlen(str);
 
-	for (len; len+1 > 0; len--)
+	while (len > 0)
 	{
-		tmp = str[len] - 97;
+		tmp = str[len-1] - 97;
 		result = result + (tmp * current);
 		current = current * 26;
+		len--;
 	}
 
 	return result;
@@ -51,20 +52,18 @@ char* stradd(char *a, char *b)
 
 char* int_to_b26(char *str)
 {
-	int  b10;
-	int  rest, tmp;
-	char *result, *bak;
+	int  b10, rest;
+	char *result;
 	char digit[2];
 
 	b10 = atoi(str);
 	result = "";
+	digit[1] = '\0';
 
 	while (b10 > 0)
 	{
 		rest = b10 % 26;
-
 		digit[0] = (char)(rest + 97);
-		digit[1] = '\0';
 
 		result = stradd(digit, result);
 
@@ -99,13 +98,11 @@ int main(int argc, char *argv[])
 		b10 = base26_to_int(str);
 		printf("(%s)base26 = (%d)base10\n", str, b10);
 	}
-
 	else if (integer)
 	{
 		b26 = int_to_b26(str);
 		printf("(%d)base10 = (%s)base26\n", atoi(str), b26);
 	}
-
 	else
 	{
 		return 1;
