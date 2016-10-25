@@ -11,29 +11,21 @@ void wc(void)
 	counter_word = 1;
 	counter_ligne = 0;
 
-	if ( fgets(str, 240, stdin) == NULL )
-	{
+	if (fgets(str, 240, stdin) == NULL)
 		return;	
-	}
 
 	len = strlen(str);
 
 	if (len < 1)
-	{
 		return;
-	}
 
 	for (i = 0; i < len; i++)
 	{
-		if ( str[i] == ' ' || str[i] == '\t')
-		{
+		if (str[i] == ' ' || str[i] == '\t')
 			counter_word++;
-		}
 
-		if ( str[i] == '\n')
-		{
+		if (str[i] == '\n')
 			counter_ligne++;
-		}
 
 		counter_char++;
 	}
