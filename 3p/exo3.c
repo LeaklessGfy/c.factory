@@ -1,6 +1,6 @@
 /*
- * TP3 Exercice 3 - Convertisseur base 26 - int
- * @author Vincent Rasquier et un peu google pour stradd
+ * TP3 Exercice 3 - Base26 <=> Int converter
+ * @author Vincent Rasquier and Google (stradd)
  * ESIPE IR 1
  */
 #include <stdio.h>
@@ -8,8 +8,7 @@
 #include <stdlib.h>
 
 /*
- * Vérifie si c est minuscule
- * 1 si c est minuscule, 0 dans le cas contraire
+ * Check if char c is lower between a and z include.
  */
 int is_lower(char c)
 {
@@ -20,8 +19,7 @@ int is_lower(char c)
 }
 
 /*
- * Vérifie si c est numéric
- * 1 si c'est un entier, 0 dans le cas contraire
+ * Check if char c is numeric, between 0 and 9 include.
  */
 int is_numeric(char c)
 {
@@ -32,8 +30,7 @@ int is_numeric(char c)
 }
 
 /*
- * Convertis une chaine minuscule interprété en base26 en entier
- * tmp = stoque l'entier que représente la lettre (a = 0)
+ * Convert char * to int. tmp = numeric representation of a char (a = 0)
  */
 int base26_to_int(char *str)
 {
@@ -56,9 +53,9 @@ int base26_to_int(char *str)
 }
 
 /*
- * Merci google ... c'est vrai que faire r = a + b pour une concaténation
- * de chaine c'était trop simple ! Let's go to malloc!
- * je suis pas censé free ret en plus ? :/
+ * Bloody concatenation. (Thanks google by the way)
+ * a + b was too easy 'nest-ce pas ?'. Should I free ret ? why I speak english ?
+ * This function makin' me crazy
  */
 char* stradd(char *a, char *b)
 {
@@ -73,8 +70,8 @@ char* stradd(char *a, char *b)
 }
 
 /*
- * Convertis un entier en une chaine base26
- * b10 = l'entier représenter par str
+ * Convert a str (wich is an int ...) to base 26
+ * b10 = numeric representation of str
  */
 char* int_to_b26(char *str)
 {
@@ -100,7 +97,7 @@ char* int_to_b26(char *str)
 }
 
 /*
- * Le chef d'orchestre !
+ * Main
  */
 int main(int argc, char *argv[])
 {
