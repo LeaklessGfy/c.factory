@@ -1,5 +1,5 @@
 /*
- * TP3 Exercice 5 - Maudit trie ! Enfin trie à bulle
+ * TP3 Exercice 5 - Bubble tea ... (what do we say about funny comment again ?) sort
  * @author Vincent Rasquier et google 
  * ESIPE IR 1
  */
@@ -7,8 +7,7 @@
 #include <stdlib.h>
 
 /*
- * Attribue des valeurs aléatoires à un tableau
- * Fait intéressant : tab est directement modifié, pas de copie de variable.
+ * Generate a random value for every position of tab (0 to size - 1)
  */
 void generate_random(int tab[], int size)
 {
@@ -24,7 +23,7 @@ void generate_random(int tab[], int size)
 }
 
 /*
- * Le fameux trie
+ * Sort the tab in 'croissant' order
  */
 void bubble_sort(int tab[], int size)
 {
@@ -62,7 +61,7 @@ void print_arr(int tab[], int size)
 }
 
 /*
- * La fonction main !
+ * The organizator (good night ! thanks)
  */
 int main(void)
 {
