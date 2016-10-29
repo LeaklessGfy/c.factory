@@ -1,5 +1,5 @@
 /*
- * TP3 Exercice 2 - Compteur dans une chaine de caractère
+ * TP3 Exercice 2 - Count char, word and ligne
  * @author Vincent Rasquier
  * ESIPE IR 1
  */
@@ -7,7 +7,7 @@
 #include <string.h>
 
 /*
- * La fonction la plus moche du monde !
+ * The counter !
  */
 void wc(void)
 {
@@ -44,11 +44,10 @@ void wc(void)
 }
 
 /*
- * Humiliation de la fonction main here !
+ * Being useless ... such a thing !
  */
 int main(void)
 {
 	wc();
-
 	return 0;
 }
