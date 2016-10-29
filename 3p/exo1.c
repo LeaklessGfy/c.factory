@@ -1,12 +1,12 @@
 /*
- * TP3 Exercice 1 - Calcul de puissance
+ * TP3 Exercice 1 - Calculate power
  * @author Vincent Rasquier
  * ESIPE IR 1
  */
 #include <stdio.h>
 
 /*
- * Calcul une puissance avec une boucle. a ^ n
+ * Calculate power with loop. int a ^ int n
  */
 int puissance(int a, int n)
 {
@@ -24,7 +24,7 @@ int puissance(int a, int n)
 }
 
 /*
- * Calcul une puissance de manière recursive. a ^ n
+ * Calculate power with recursion. int a ^ int n
  */
 int puissance_recursive(int a, int n)
 {
@@ -40,8 +40,7 @@ int puissance_recursive(int a, int n)
 }
 
 /*
- * Appel des deux fonctions dans me main.
- * p = entier temporaire pour stoquer un result
+ * Call puissance for 2 ^ 6 and puissance_recursive for 2 ^ 10
  */
 int main(void)
 {
