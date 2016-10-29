@@ -1,5 +1,13 @@
+/*
+ * TP3 Exercice 1 - Calcul de puissance
+ * @author Vincent Rasquier
+ * ESIPE IR 1
+ */
 #include <stdio.h>
 
+/*
+ * Calcul une puissance avec une boucle. a ^ n
+ */
 int puissance(int a, int n)
 {
 	int result;
@@ -15,6 +23,9 @@ int puissance(int a, int n)
 	return result;
 }
 
+/*
+ * Calcul une puissance de manière recursive. a ^ n
+ */
 int puissance_recursive(int a, int n)
 {
 	if (n < 1)
@@ -28,6 +39,10 @@ int puissance_recursive(int a, int n)
 	return a * puissance_recursive(a, n);
 }
 
+/*
+ * Appel des deux fonctions dans me main.
+ * p = entier temporaire pour stoquer un result
+ */
 int main(void)
 {
 	int p;

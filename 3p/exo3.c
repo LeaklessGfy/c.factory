@@ -1,7 +1,16 @@
+/*
+ * TP3 Exercice 3 - Convertisseur base 26 - int
+ * @author Vincent Rasquier et un peu google pour stradd
+ * ESIPE IR 1
+ */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
+/*
+ * Vérifie si c est minuscule
+ * 1 si c est minuscule, 0 dans le cas contraire
+ */
 int is_lower(char c)
 {
 	if (c >= 'a' && c <= 'z')
@@ -10,6 +19,10 @@ int is_lower(char c)
 	return 0;
 }
 
+/*
+ * Vérifie si c est numéric
+ * 1 si c'est un entier, 0 dans le cas contraire
+ */
 int is_numeric(char c)
 {
 	if (c >= '0' && c <= '9')
@@ -18,6 +31,10 @@ int is_numeric(char c)
 	return 0;
 }
 
+/*
+ * Convertis une chaine minuscule interprété en base26 en entier
+ * tmp = stoque l'entier que représente la lettre (a = 0)
+ */
 int base26_to_int(char *str)
 {
 	int result, current, tmp;
@@ -38,6 +55,11 @@ int base26_to_int(char *str)
 	return result;
 }
 
+/*
+ * Merci google ... c'est vrai que faire r = a + b pour une concaténation
+ * de chaine c'était trop simple ! Let's go to malloc!
+ * je suis pas censé free ret en plus ? :/
+ */
 char* stradd(char *a, char *b)
 {
 	size_t len;
@@ -50,6 +72,10 @@ char* stradd(char *a, char *b)
 	return strcat(strcat(ret, a), b);
 }
 
+/*
+ * Convertis un entier en une chaine base26
+ * b10 = l'entier représenter par str
+ */
 char* int_to_b26(char *str)
 {
 	int  b10, rest;
@@ -73,6 +99,9 @@ char* int_to_b26(char *str)
 	return result;
 }
 
+/*
+ * Le chef d'orchestre !
+ */
 int main(int argc, char *argv[])
 {
 	char *str, *b26;

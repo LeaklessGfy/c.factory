@@ -1,6 +1,14 @@
+/*
+ * TP3 Exercice 2 - Compteur dans une chaine de caractère
+ * @author Vincent Rasquier
+ * ESIPE IR 1
+ */
 #include <stdio.h>
 #include <string.h>
 
+/*
+ * La fonction la plus moche du monde !
+ */
 void wc(void)
 {
 	char str[240];
@@ -35,6 +43,9 @@ void wc(void)
 	printf("Ligne: %d\n", counter_ligne);
 }
 
+/*
+ * Humiliation de la fonction main here !
+ */
 int main(void)
 {
 	wc();
