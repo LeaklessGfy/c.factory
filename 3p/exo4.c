@@ -1,8 +1,8 @@
 /*
- * TP3 Exercice 4 - trie dichotomique
+ * TP3 Exercice 4 - Binary Search
  * @author Vincent Rasquier
  * ESIPE IR 1
- * commentaire inutile: je veux retourner coder sur 'go' please !
+ * (Please let me return on Go ... Funny comment will be prohibithed after this function)
  */
 #include <stdio.h>
 
@@ -10,7 +10,7 @@
  * Une recherche dichotomique
  * list = chaine d'entier trié, min = la valeur minimum (que l'on veut traiter)
  * de la list. max = la valeur maximum. key = la valeur qu'on cherche.
- * mid = le milieu entre min et max !
+ * mid = le milieu entre min et max ! (c'était dur à expliquer en anglais)
  */
 int binary_search(int list[], int min, int max, int key)
 {
@@ -37,7 +37,7 @@ int binary_search(int list[], int min, int max, int key)
 }
 
 /*
- * Dat definition de list ! Faute de norme !
+ * List init make the ligne 45 too large ... -1 for norme
  */
 int main(void)
 {
