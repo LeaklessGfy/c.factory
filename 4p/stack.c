@@ -47,10 +47,8 @@ void stack_push(int n)
 {
     stack.values[stack.size] = n;
 	
-	if (stack.size + 1 < MAX_SIZE)
-	{
-	    stack.size++;
-	}
+    if (stack.size + 1 < MAX_SIZE)
+        stack.size++;
 }
 
 /* Displays the content of the stack on the standard output. */
