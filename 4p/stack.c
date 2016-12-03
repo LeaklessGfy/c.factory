@@ -46,9 +46,7 @@ int stack_pop(void)
 void stack_push(int n)
 {
     if (stack.size < MAX_SIZE)
-    {
         stack.size++;
-    }
 
     stack.values[stack.size - 1] = n;
 }
