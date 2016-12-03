@@ -8,7 +8,10 @@
    - 0 : quit the programm 
    - 1 : push an element on the stack
    - 2 : resolve an arithmetic operation
-   - 3 : invalid action */
+   - 3 : invalid action 
+   
+   IMPORTANT - Due to bug with LIB and the character % 
+   we change this with &*/
 int analyse_action(char* str_action){
   if (strncmp(str_action, "q", 2) == 0){
     return 0;
@@ -291,6 +294,11 @@ void expo(void){
   pause_keyboard();
 }
 
+/* 
+** Function that push the rest of division in the stack.
+** Activate this function with '&' character
+** @author Vincent Rasquier
+*/
 void modulo(void)
 {
     int a, b;
@@ -335,13 +343,23 @@ void modulo(void)
     pause_keyboard();
 }
 
-unsigned long factorial(unsigned long f)
+/* 
+** Recursive function that calculate factorial of n
+** @author Google + Vincent Rasquier
+*/
+int factorial(int n)
 {
-    if ( f == 0 ) 
-        return 1;
-    return(f * factorial(f - 1));
+    if (n == 0) 
+      return 1;
+    
+    return(n * factorial(n - 1));
 }
 
+/* 
+** Function that push the factorial in the stack.
+** Activate this function with '!' character
+** @author Vincent Rasquier
+*/
 void facto(void)
 {
     int a;

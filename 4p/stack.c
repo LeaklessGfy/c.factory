@@ -19,7 +19,7 @@ int stack_size(void)
 /* Returns 1 if the stack is empty, returns 0 otherwise. */
 int stack_is_empty(void)
 {
-    if (stack.size == 0)
+    if (stack.size < 1)
         return 1;
     
     return 0;
@@ -45,10 +45,12 @@ int stack_pop(void)
 /* Pushes a given integer `n` at the top of the stack. */
 void stack_push(int n)
 {
-    stack.values[stack.size] = n;
-	
-    if (stack.size + 1 < MAX_SIZE)
+    if (stack.size < MAX_SIZE)
+    {
         stack.size++;
+    }
+
+    stack.values[stack.size - 1] = n;
 }
 
 /* Displays the content of the stack on the standard output. */
@@ -56,9 +58,9 @@ void stack_display(void)
 {
     int i;
     
-    for(i = 0; i < stack.size; i++)
+    for(i = stack.size - 1; i > -1; i--)
     {
-        printf("%d\n", stack.values[i]);
+        printf("Key: %d - Value: %d\n", i, stack.values[i]);
     }
 }
 
