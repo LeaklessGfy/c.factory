@@ -34,12 +34,9 @@ int stack_top(void)
 /* Pops the element at the top of the stack and returns it. */
 int stack_pop(void)
 {
-    int last;
-    
-    last = stack_top();
     stack.size--;
     
-    return last;
+    return stack.values[stack.size];
 }
 
 /* Pushes a given integer `n` at the top of the stack. */

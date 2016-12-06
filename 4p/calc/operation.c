@@ -301,7 +301,7 @@ void expo(void){
 */
 void modulo(void)
 {
-    int a, b;
+    int a, b, modulo_ab;
     
     clear_window();
     a = stack_pop();
@@ -320,6 +320,8 @@ void modulo(void)
     actualise_window();
     pause_keyboard();
 
+    modulo_ab = fmod(b, a);
+
     clear_window();
     display_transition_2(a);
     display_transition_1(b);
@@ -331,12 +333,12 @@ void modulo(void)
 
     clear_window();
     display_stack();
-    display_transition_1((int)fmod(b,a));
+    display_transition_1(modulo_ab);
     display_action_msg("Push the modulo");
     actualise_window();
     pause_keyboard();
 
-    stack_push((int)fmod(b,a));
+    stack_push(modulo_ab);
     clear_window();
     display_stack();
     actualise_window();
@@ -344,15 +346,19 @@ void modulo(void)
 }
 
 /* 
-** Recursive function that calculate factorial of n
-** @author Google + Vincent Rasquier
+** Function that calculate factorial of n
+** @author Vincent Rasquier
 */
 int factorial(int n)
 {
-    if (n == 0) 
-      return 1;
-    
-    return(n * factorial(n - 1));
+    int res, i;
+
+    for(res = i = 1; i <= n; i++) 
+    {
+      res *= i;
+    }
+      
+    return res;
 }
 
 /* 
@@ -362,7 +368,7 @@ int factorial(int n)
 */
 void facto(void)
 {
-    int a;
+    int a, factorial_a;
     
     clear_window();
     a = stack_pop();
@@ -371,6 +377,8 @@ void facto(void)
     display_action_msg("Pop an element");
     actualise_window();
     pause_keyboard();
+
+    factorial_a = factorial(a);
 
     clear_window();
     display_transition_2(a);
@@ -381,13 +389,15 @@ void facto(void)
     pause_keyboard();
 
     clear_window();
+    display_transition_2(a);
+    display_operation('!');
     display_stack();
-    display_transition_1((int)factorial(a));
+    display_transition_1(factorial_a);
     display_action_msg("Push the factoriel");
     actualise_window();
     pause_keyboard();
 
-    stack_push((int)factorial(a));
+    stack_push(factorial_a);
     clear_window();
     display_stack();
     actualise_window();
