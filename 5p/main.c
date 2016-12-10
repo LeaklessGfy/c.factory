@@ -89,17 +89,11 @@ void test_3(void)
 int main(int argc, char* argv[])
 {
     if (argc < 2)
-    {
         test_3();
-    }
     else if (strcmp(argv[1], "1") == 0)
-    {
         test_1();
-    }
     else if (strcmp(argv[1], "2") == 0)
-    {
         test_2();
-    }
 
     return 0;
 }
