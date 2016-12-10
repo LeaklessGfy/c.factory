@@ -16,23 +16,24 @@ void test_1(void)
     arr2 = allocate_integer_array(6);
     arr2[5] = -1;
 
-    printf("%d\n", array_size(arr));
-    printf("%d\n", array_size(arr2));
+    printf("Array 1 size: %d\n", array_size(arr));
+    printf("Array 2 size: %d\n", array_size(arr2));
 
-    printf("\n --arr1\n");
+    printf("\nArray 1: \n");
     print_array(arr);
 
-    printf("\n --arr2\n");
+    printf("Array 2: \n");
     print_array(arr2);
 
-    printf("\n --Are Equal (arr1, arr2)?\n");
+    printf("\nAre they equal (Array 1, Array 2) ? Yes => 1 No => 0 \n");
     printf("%d\n", are_arrays_equal(arr, arr2));
 
     arr3 = copy_array(arr);
-    printf("\n --Copy arr1 to arr3\n");
+    printf("\nCopy Array 1 to Array 3\n");
+    printf("Array 3: \n");
     print_array(arr3);
 
-    printf("\n --Are Equal?\n");
+    printf("\nAre they equal (Array 1, Array 3) ? Yes => 1 No => 0 \n");
     printf("%d\n", are_arrays_equal(arr, arr3));
 
     free_integer_array(arr);

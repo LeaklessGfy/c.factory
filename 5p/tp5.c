@@ -100,7 +100,7 @@ int* copy_array(int *array)
     int *new_array;
 
     len = array_size(array);
-    new_array = allocate_integer_array(len + 1);
+    new_array = allocate_integer_array(len);
 
     for (i = 0; i <= len; i++)
     {
@@ -124,7 +124,7 @@ int* fill_array(void)
     printf("Longueur du tableau: ");
     scanf("%d", &len);
 
-    arr = allocate_integer_array(len + 1);
+    arr = allocate_integer_array(len);
 
     for (i = 0; i < len; i++)
     {
@@ -147,7 +147,7 @@ int* random_array(int size, int max_entry)
     int i;
     int *arr;
 
-    arr = allocate_integer_array(size + 1);
+    arr = allocate_integer_array(size);
     srand(time(NULL));
 
     for (i = 0; i < size; i++)
@@ -174,7 +174,7 @@ int* concat_array(int *first, int *second)
     len2 = array_size(second);
     fullLen = len1 + len2;
 
-    arr = allocate_integer_array(fullLen+1);
+    arr = allocate_integer_array(fullLen);
 
     for (i = 0; i < len1; i++)
     {
@@ -264,8 +264,8 @@ void split_arrays(int *array, int **first, int **second)
     middle = len / 2;
     rest = len - middle;
 
-    arr1 = allocate_integer_array(middle + 1);
-    arr2 = allocate_integer_array(rest + 1);
+    arr1 = allocate_integer_array(middle);
+    arr2 = allocate_integer_array(rest);
 
     for (i = 0; i < middle; i++)
     {
@@ -292,7 +292,7 @@ void split_arrays(int *array, int **first, int **second)
 */
 int* merge_sort(int *array)
 {
-    int *new_arr, *arr1, *arr2;
+    int *new_arr, *arr1, *arr2, *m1, *m2;
 
     new_arr = copy_array(array);
 
@@ -300,10 +300,16 @@ int* merge_sort(int *array)
         return new_arr;
 
     split_arrays(new_arr, &arr1, &arr2);
-    new_arr = merge_sorted_arrays(merge_sort(arr1), merge_sort(arr2));
+
+    m1 = merge_sort(arr1);
+    m2 = merge_sort(arr2);
+
+    new_arr = merge_sorted_arrays(m1, m2);
 
     free_integer_array(arr1);
     free_integer_array(arr2);
+    free_integer_array(m1);
+    free_integer_array(m2);
 
     return new_arr;
 }
