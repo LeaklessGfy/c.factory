@@ -102,11 +102,10 @@ int* copy_array(int *array)
     len = array_size(array);
     new_array = allocate_integer_array(len + 1);
 
-    for (i = 0; i < len; i++)
+    for (i = 0; i <= len; i++)
     {
         new_array[i] = array[i];
     }
-    new_array[len] = -1;
 
     return new_array;
 }
@@ -208,11 +207,7 @@ int* merge_sorted_arrays(int *first, int *second)
     i1 = i2 = 0;
 
     printf("- Merge the two following ones :\n");
-
-    printf("Part 1: ");
     print_array(first);
-
-    printf("Part 2: ");
     print_array(second);
 
     len1 = array_size(first);
@@ -248,7 +243,6 @@ int* merge_sorted_arrays(int *first, int *second)
         i2++;
     }
 
-    printf("Result: ");
     print_array(arr);
 
     return arr;
@@ -264,8 +258,6 @@ void split_arrays(int *array, int **first, int **second)
     int *arr1, *arr2;
 
     printf("- Split array in two part :\n");
-
-    printf("Array: ");
     print_array(array);
 
     len = array_size(array);
@@ -287,10 +279,7 @@ void split_arrays(int *array, int **first, int **second)
     }
     arr2[rest] = -1;
 
-    printf("Part 1: ");
     print_array(arr1);
-
-    printf("Part 2: ");
     print_array(arr2);
 
     *first = arr1;

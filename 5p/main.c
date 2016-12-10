@@ -10,6 +10,7 @@ void test_1(void)
     arr[0] = 7;
     arr[1] = 8;
     arr[2] = 6;
+    arr[3] = 5;
     arr[4] = -1;
 
     arr2 = allocate_integer_array(6);
