@@ -36,28 +36,13 @@ int stack_adr(int n, int* height, int* start_adr){
   return p;
 }
 
-void dirty_calc(void) {
-    int i;
-    double x, y, *o;
-    
-    x = 10000000000000000000.5;
-    y = 10000000000000000000.5;
-    
-    for (i = 1; i < 9999999; i++)
-    {
-        o = malloc(sizeof(double) * i);
-        *o = x + y * x + y;
-    }
-}
-
 int main(int argc, char* argv[]){
   int i;
+  int d[222222222222222222];
 
   if (argc != 2){
     fprintf(stderr, "Nope, I need one positive integer in argument to work properly.\n");
   }
-    
-    /*dirty_calc();*/
 
   stack_adr(atoi(argv[1]), &i, &i);
 
