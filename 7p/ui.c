@@ -28,16 +28,7 @@ void UI_print_sudoku(Board grid)
             else
                 strcpy(val, empty);
                 
-            MLV_draw_adapted_text_box(
-                x, 
-                y, 
-                val, 
-                20, 
-                MLV_COLOR_SNOW,
-                MLV_COLOR_SNOW,
-                MLV_COLOR_BLACK, 
-                MLV_TEXT_CENTER
-            );
+            UI_drawcell(x, y, val);
 
             check_y++;
             x = x + CELL_WIDTH;
@@ -61,6 +52,34 @@ void UI_print_sudoku(Board grid)
         x = CELL_WIDTH;
         check_y = 0;
     }
+}
+
+void UI_drawcell(int x, int y, char *val)
+{
+    MLV_draw_adapted_text_box(
+        x, 
+        y, 
+        val, 
+        20, 
+        MLV_COLOR_SNOW,
+        MLV_COLOR_SNOW,
+        MLV_COLOR_BLACK, 
+        MLV_TEXT_CENTER
+    );
+}
+
+void UI_highlightcell(int x, int y, MLV_Color color)
+{
+    MLV_draw_adapted_text_box(
+        x, 
+        y, 
+        "?", 
+        20, 
+        color, 
+        MLV_COLOR_BLACK, 
+        MLV_COLOR_SNOW, 
+        MLV_TEXT_CENTER
+    );
 }
 
 void UI_print_selection(void)
@@ -95,6 +114,5 @@ void UI_print_selection(void)
         
         x = 850;
         y = y + CELL_HEIGHT;
-    }
-    
+    } 
 }
