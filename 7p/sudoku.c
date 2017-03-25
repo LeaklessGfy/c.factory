@@ -122,7 +122,7 @@ void wait_for_cell(Board grid, int *x, int *y)
     get_cell_ui(mouse_x, mouse_y, x, y);
 
     if (!is_valid_cell(*x, *y) || is_define_cell(grid, *y, *x))
-        wait_for_cell(grid);
+        wait_for_cell(grid, x, y);
     
     UI_print_selection();
     display_selection(grid, *x, *y);
@@ -154,7 +154,7 @@ void play(Board grid)
     while (run)
     {
         /* GET CELL */
-        wait_for_cell(grid, &bx, &by)
+        wait_for_cell(grid, &bx, &by);
         
         /* GET SELECTION */
         MLV_wait_mouse(&mouse_x, &mouse_y);
